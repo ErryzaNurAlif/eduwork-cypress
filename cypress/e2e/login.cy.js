@@ -29,7 +29,7 @@ describe('Login page', () => {
 			cy.login(username, password)
 		})
 
-		// Checking url setelah login benar url account
+		// Checking url after login
 		cy.url().should(
 			'eq',
 			'http://zero.webappsecurity.com/bank/account-summary.html'
