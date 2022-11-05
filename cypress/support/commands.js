@@ -59,3 +59,28 @@ Cypress.Commands.add('logout', () => {
 	// Cliking for logout
 	cy.get('#logout_link').click()
 })
+
+Cypress.Commands.add('loginsaucedemo', (username, password) => {
+	cy.clearCookies()
+	cy.clearLocalStorage()
+
+	// Input username
+	cy.get("input[id='user-name']").clear()
+	cy.get("input[id='user-name']").type(username)
+
+	// Input password
+	cy.get("input[id='password']").clear()
+	cy.get("input[id='password']").type(password)
+
+	// Clicking button login
+	cy.get("input[id='login-button']").click()
+})
+
+// Cypress.Commands.add('selectproduct', productname => {
+// 	cy.get('.inventory_item_name').each(($el, index) => {
+// 		if ($el.text().includes(productname)) {
+// 			// Clicking add to cart
+// 			cy.get("button[id='add-to-cart-sauce-labs-bike-light']").eq(index).click()
+// 		}
+// 	})
+// })

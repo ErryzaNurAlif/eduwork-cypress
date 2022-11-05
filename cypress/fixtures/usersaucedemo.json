@@ -1,0 +1,9 @@
+{
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "username_invalid": "standard_user1",
+    "password_invalid": "secret",
+    "username_null": " ",
+    "password_null": " ",
+    "productname": "2"
+}
