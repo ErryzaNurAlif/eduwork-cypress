@@ -6,9 +6,9 @@ describe('Login page', () => {
 	})
 
 	it('Should try to login with invalid data', () => {
-		cy.fixture('user_invalid').then(user => {
-			const username = user.username
-			const password = user.password
+		cy.fixture('user').then(user => {
+			const username = user.username_invalid
+			const password = user.password_invalid
 
 			cy.login(username, password)
 		})
@@ -41,5 +41,8 @@ describe('Login page', () => {
 
 	it('Should logout from the aplication', () => {
 		cy.logout()
+
+		// Assertion logout
+		cy.url().should('eq', 'http://zero.webappsecurity.com/index.html')
 	})
 })
